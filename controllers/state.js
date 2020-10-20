@@ -1,6 +1,5 @@
 const State = require('../models/state');
 const { Router } = require('express');
-const Dog = require('../../../expressreactbuild/backend/models/dog');
 const router = Router();
 
 // INDEX - GET ALL STATES
