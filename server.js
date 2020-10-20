@@ -19,6 +19,7 @@ const morgan = require('morgan');
 // ROUTER IMPORTS
 // like const dogRouter = require("./controllers/dog")
 const stateRouter = require('./controllers/state');
+const capitolRouter = require('./controllers/capitol');
 
 // MIDDLEWARE
 app.use(cors());
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
 
 // STATE ROUTES
 app.use('/state', stateRouter);
+app.use('/capitol', capitolRouter);
 
 // LISTENER
 app.listen(PORT, () => {
