@@ -9,7 +9,7 @@ router.post('/state/:stateid', async (req, res) => {
 	const state = await State.findById(req.params.stateid);
 	capitol.state = capitol._id;
 	capitol.save();
-	state.comments.push(capitol._id);
+	state.capitol.push(capitol._id);
 	state.save();
 	res.json(capitol);
 });
