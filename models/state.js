@@ -5,6 +5,7 @@ const stateSchema = new Schema(
 	{
 		name: String,
 		img: String,
+		capitol: [{ ref: 'Capitol', type: Schema.Types.ObjectId }],
 	},
 	{ timestamps: true }
 );
