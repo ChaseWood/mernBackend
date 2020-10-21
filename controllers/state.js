@@ -4,7 +4,7 @@ const router = Router();
 
 // INDEX - GET ALL STATES
 router.get('/', async (req, res) => {
-	res.json(await State.find({}));
+	res.json(await State.find({}).populate('capitol'));
 });
 
 // CREATE - CREATE NEW STATE
