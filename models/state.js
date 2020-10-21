@@ -1,11 +1,12 @@
 const { Schema, model } = require('mongoose');
+const mongoose = require('../db/connection');
 
 // STATE SCHEMA
 const stateSchema = new Schema(
 	{
 		name: String,
 		img: String,
-		capitol: [{ ref: 'Capitol', type: Schema.Types.ObjectId }],
+		capitol: [{ ref: 'Capitol', type: mongoose.Types.ObjectId }],
 	},
 	{ timestamps: true }
 );
