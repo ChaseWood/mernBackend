@@ -1,6 +1,18 @@
+const State = require('../models/state');
 const Capitol = require('../models/capitol');
 const { Router } = require('express');
 const router = Router();
+
+// CREATE A CAPITOL
+router.post('/state/:stateid', async (req, res) => {
+	const capitol = await Capitol.create(req.body);
+	const state = await State.findById(req.params.stateid);
+	capitol.state = capitol._id;
+	capitol.save();
+	state.comments.push(capitol._id);
+	state.save();
+	res.json(capitol);
+});
 
 // INDEX - GET ALL CAPITOLS
 router.get('/', async (req, res) => {
