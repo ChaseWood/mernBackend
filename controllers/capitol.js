@@ -8,7 +8,7 @@ router.post('/state/:stateid', async (req, res) => {
 	const capitol = await Capitol.create(req.body);
 	const state = await State.findById(req.params.stateid);
 	capitol.state = capitol._id;
-	// capitol.save();
+	capitol.save();
 	state.comments.push(capitol._id);
 	state.save();
 	res.json(capitol);
