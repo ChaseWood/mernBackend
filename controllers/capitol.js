@@ -4,7 +4,7 @@ const { Router } = require('express');
 const router = Router();
 
 // CREATE A CAPITOL
-router.post('/state/:stateid', async (req, res) => {
+router.post('/:stateid', async (req, res) => {
 	const capitol = await Capitol.create(req.body);
 	const state = await State.findById(req.params.stateid);
 	capitol.state = capitol._id;
